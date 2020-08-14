@@ -19,16 +19,37 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { useDispatch, useSelector } from "react-redux";
 import {Link} from  'react-router-dom';
+import Grid from '@material-ui/core/Grid';
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    maxWidth: '345',
+    background:'#fff',
+    margin:'5px',
   },
+  productbox:{
+    height:'150px',
+    overflow:'hidden',
+    padding:'10px',
+  },
+  inlineflex:{
+    display: 'inline-flex',
+    width:'100%',
+},
+images:{
+  height:'175',
+},
   media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
+    height: '150px',
+    paddingTop: '56.25%', 
+
+    
   },
+  cardhead:{
+    padding:'10px',
+    height:'100px',
+  },  
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -61,8 +82,10 @@ export default function RecipeReviewCard(props) {
    };
  
   return (
+  
+  <Grid className={classes.inlineflex} item xs={12} lg={3} md={3}>
     <Card className={classes.root}>
-      <CardHeader
+      <CardHeader className={classes.cardhead}
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
             {props.productName[0]}
@@ -93,8 +116,8 @@ export default function RecipeReviewCard(props) {
         title={props.productName}
       /></Link>
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-        <div
+        <Typography  className={classes.productbox} variant="body2" color="textSecondary" component="p">
+        <div className={classes.images}
   dangerouslySetInnerHTML={{
     __html: props.shortDescription
   }}></div>
@@ -110,5 +133,7 @@ export default function RecipeReviewCard(props) {
         
       </CardActions>
     </Card>
+    </Grid>
+ 
   );
 }

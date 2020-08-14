@@ -10,7 +10,7 @@ import rootReducer from '../Reducer/Index';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import Index from '../Container/Index';
-import ProductDetails from '../Container/ProductDetails';
+import ProductDetails from '../Container/ProductDetails'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
