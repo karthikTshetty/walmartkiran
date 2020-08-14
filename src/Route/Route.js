@@ -12,7 +12,7 @@ import thunk from 'redux-thunk';
 import Index from '../Container/Index';
 import ProductDetails from '../Container/ProductDetails'
 import { composeWithDevTools } from 'redux-devtools-extension';
-
+import EditForm from '../Container/EditForm';
 
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
@@ -25,9 +25,12 @@ export default function App()
             <Router>
                 <Switch>
                     <Route path="/" component={Index} exact/>  
-                    <Route path="/productdetail/:id" component={ProductDetails} exact/>                    
+                    <Route path="/productdetail/:id" component={ProductDetails} exact/> 
+                     <Route path="/editform" component={EditForm}  exact />                 
                 </Switch>
             </Router>
         </Provider>
     )
 }
+
+

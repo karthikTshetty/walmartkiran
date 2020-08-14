@@ -108,7 +108,7 @@ export default function RecipeReviewCard(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Edit</MenuItem>
+        <MenuItem onClick={handleClose}><Link to={'/editform'}>Edit</Link></MenuItem>
       </Menu>
       <Link to={`/productdetail/${props.productId}`}><CardMedia
         className={classes.media}
@@ -137,3 +137,4 @@ export default function RecipeReviewCard(props) {
  
   );
 }
+
